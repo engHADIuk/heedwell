@@ -2,13 +2,15 @@
   <img src="brand/heedwell-logo.png" alt="Heedwell, your pet's week, planned" width="440">
 </h1>
 
+**Live site: https://heedwell.vercel.app**
+
 ![The Heedwell home page](docs/screenshots/home.jpg)
 
 Heedwell is a small web app for UK dog and cat owners. You give it a postcode and a few details about your pet, and it uses the local weather to show how active ticks, fleas, harvest mites and lungworm are likely to be over the next seven days. Every score comes with the reasons behind it and the published source for each reason, and there is a one-page summary you can take to your vet.
 
-Parasite risk changes with the weather. Ticks wake up after a run of mild days, fleas like damp air, harvest mites follow late summer. Most advice is a flat "treat every month", which is sensible but doesn't tell you why this week is different from the last. I wanted to see how far real weather data could go in making that concrete, without pretending to be a vet.
+Parasite risk changes with the weather. Ticks wake up after a run of mild days, fleas like damp air, harvest mites follow late summer. Most advice is a flat "treat every month", which is sensible but doesn't tell you why this week is different from the last. Heedwell explores how far real weather data can go in making that concrete, without pretending to be a vet.
 
-It is an independent concept. I built it while applying for the software engineering placement at Elanco UK, and Elanco hasn't made, reviewed or endorsed it. It isn't veterinary advice.
+It is an independent concept made by Hadi as a portfolio project for a software engineering placement application at Elanco UK. Elanco hasn't made, reviewed or endorsed it, and it isn't veterinary advice.
 
 ## What it does
 
@@ -138,13 +140,13 @@ docs/screenshots/   the pictures above
 
 ## Built with
 
-Next.js 16 (App Router), React 19 and TypeScript. The styling is plain CSS with no UI kit, the icons are from lucide, and the fonts are Newsreader and Source Sans 3. Tests run on Vitest, and GitHub Actions runs lint, type-check, tests and a build on every push to main and every pull request.
+Next.js 16 (App Router), React 19 and TypeScript. The styling is plain CSS with no UI kit, the icons are from lucide, and the fonts are Newsreader and Source Sans 3. The code was written with the help of an AI coding assistant. Tests run on Vitest, and GitHub Actions runs lint, type-check, tests and a build on every push to main and every pull request.
 
 ## Data and licences
 
 Weather is from Open-Meteo under CC BY 4.0. Its free service is for non-commercial use, which suits a portfolio project, and a commercial product would need a paid plan. Medicines data is from the Veterinary Medicines Directorate under the Open Government Licence v3.0. Photographs are from Unsplash. Full credits are in [ATTRIBUTIONS.md](ATTRIBUTIONS.md).
 
-## Where I'd take it next
+## Next steps
 
 - A version a vet practice could brand and put its own regional notes on.
 - A local sightings signal alongside the weather, once there's a reliable open source for it.
