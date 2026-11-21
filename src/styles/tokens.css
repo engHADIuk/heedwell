@@ -1,0 +1,309 @@
+/* Heedwell design tokens, reset and typography.
+   Main colours: Deep Teal and Sea-glass Mint. Supporting tones for gradients: Ocean (water, rain), Dawn and Sand (warm light).
+   One sparing accent: Warm Coral, about 5% of any screen. */
+:root {
+  --teal-900: #0b3c3f;
+  --teal-800: #0f4e52;
+  --teal-700: #14736f;
+  --mint: #8fd9c4;
+  --mint-200: #cdefe4;
+  --mint-100: #e6f7f1;
+  --coral: #ff8a65;
+  --coral-ink: #a8421f; /* coral dark enough to use as text on light backgrounds */
+  --oat: #f4f7f5;
+  --ink: #0e1f20;
+  --mist: #5b6e6d;
+
+  --ocean-900: #0a3b52;
+  --ocean-700: #1c6b8c;
+  --ocean-500: #3a9bbf;
+  --ocean-200: #c3e4f1;
+  --ocean-100: #e4f3f9;
+  --dawn-300: #ffc9ad;
+  --dawn-200: #ffe3d3;
+  --dawn-100: #fff2ea;
+  --sand-200: #f1e5d3;
+  --sand-100: #f8f1e6;
+
+  /* Gradients used for bands, buttons and photo fallbacks. */
+  --aurora: radial-gradient(70% 90% at 100% 0%, rgba(111, 208, 189, 0.55), transparent 60%),
+    radial-gradient(60% 80% at 0% 100%, rgba(28, 107, 140, 0.55), transparent 62%),
+    linear-gradient(135deg, #062b2e 0%, #0b3c3f 34%, #0f5560 66%, #14736f 100%);
+  --aurora-soft: radial-gradient(60% 80% at 0% 0%, rgba(143, 217, 196, 0.5), transparent 62%),
+    radial-gradient(60% 80% at 100% 100%, rgba(255, 201, 173, 0.45), transparent 62%),
+    linear-gradient(180deg, #eaf7f2 0%, #e8f3f8 100%);
+  --dawn-wash: linear-gradient(180deg, #f8f1e6 0%, #fff2ea 100%);
+
+  --lv-low: #8fd9c4;
+  --lv-moderate: #f2d77e;
+  --lv-high: #ff8a65;
+  --lv-veryhigh: #c8452f;
+
+  --focus: #14736f;
+
+  --font-display: "Newsreader Variable", "Newsreader", Georgia, "Times New Roman", serif;
+  --font-body: "Source Sans 3 Variable", "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --t-xs: 0.8125rem;
+  --t-sm: 0.9375rem;
+  --t-base: 1.0625rem;
+  --t-md: 1.25rem;
+  --t-lg: 1.5625rem;
+  --t-xl: 1.95rem;
+  --t-2xl: clamp(2.1rem, 4.6vw, 3.5rem);
+
+  --r-sm: 12px;
+  --r-md: 20px;
+  --r-lg: 28px;
+  --r-xl: 36px;
+
+  --gutter: clamp(16px, 4vw, 40px);
+  --maxw: 1120px;
+  --measure: 62ch;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-padding-top: 96px;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-body);
+  font-size: var(--t-base);
+  line-height: 1.55;
+  color: var(--ink);
+  background: var(--oat);
+  font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body > main,
+body > footer {
+  flex-shrink: 0;
+}
+body > main {
+  flex: 1 0 auto;
+}
+
+/* Ambient background: three soft pools of colour behind everything, plus a whisper of grain. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(60vw 52vh at 8% -6%, rgba(143, 217, 196, 0.6), transparent 62%),
+    radial-gradient(52vw 52vh at 104% 8%, rgba(58, 155, 191, 0.22), transparent 66%),
+    radial-gradient(48vw 44vh at 90% 108%, rgba(255, 201, 173, 0.34), transparent 70%),
+    radial-gradient(40vw 40vh at 0% 100%, rgba(143, 217, 196, 0.25), transparent 70%),
+    var(--oat);
+}
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.045;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .6 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 450;
+  letter-spacing: -0.012em;
+  line-height: 1.15;
+  margin: 0;
+  text-wrap: balance;
+  color: var(--teal-900);
+}
+h2 {
+  font-size: var(--t-xl);
+}
+h3 {
+  font-size: var(--t-md);
+}
+p {
+  margin: 0;
+  text-wrap: pretty;
+}
+a {
+  color: var(--teal-700);
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+a:hover {
+  color: var(--teal-900);
+}
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+button,
+input {
+  font: inherit;
+  color: inherit;
+}
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+code {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.9em;
+  background: rgba(11, 60, 63, 0.07);
+  padding: 0.1em 0.4em;
+  border-radius: 6px;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+.welcome :focus-visible,
+.glass--onphoto :focus-visible {
+  outline-color: var(--mint);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: fixed;
+  left: 16px;
+  top: -80px;
+  z-index: 100;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: var(--teal-900);
+  color: #fff;
+  font-weight: 600;
+  transition: top 0.15s;
+}
+.skip-link:focus {
+  top: 12px;
+}
+
+/* ---------- Layout ---------- */
+.wrap {
+  width: 100%;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+.wrap.narrow {
+  max-width: 760px;
+}
+.prose-page {
+  max-width: 860px;
+  padding-bottom: 72px;
+}
+.prose-page > section {
+  margin-top: 56px;
+}
+.prose-page h2 {
+  margin-bottom: 16px;
+}
+.prose-page h3 {
+  margin: 28px 0 10px;
+}
+.prose-page p {
+  max-width: var(--measure);
+  margin-bottom: 14px;
+}
+
+.page-title {
+  font-size: var(--t-2xl);
+  margin: 48px 0 14px;
+}
+.page-title--sm {
+  font-size: var(--t-xl);
+  margin: 0 0 8px;
+}
+.lead {
+  font-size: var(--t-md);
+  line-height: 1.5;
+  color: var(--mist);
+  max-width: 52ch;
+  margin-bottom: 28px;
+}
+.muted {
+  color: var(--mist);
+}
+.small {
+  font-size: var(--t-sm);
+  color: var(--mist);
+  max-width: var(--measure);
+  margin-top: 14px;
+}
+.plain-list {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+  max-width: var(--measure);
+}
+.plain-list li {
+  position: relative;
+  padding-left: 22px;
+}
+.plain-list li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 0.62em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--mint);
+  box-shadow: 0 0 0 2px rgba(20, 115, 111, 0.25);
+}
+.link-btn {
+  background: none;
+  border: 0;
+  padding: 0 4px;
+  min-height: 32px;
+  color: var(--teal-700);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+/* ---------- Level colours (never the only signal) ---------- */
+.lv-low {
+  --lv: var(--lv-low);
+}
+.lv-moderate {
+  --lv: var(--lv-moderate);
+}
+.lv-high {
+  --lv: var(--lv-high);
+}
+.lv-veryHigh {
+  --lv: var(--lv-veryhigh);
+}

@@ -1,0 +1,67 @@
+/* The vet summary prints as a clean A4 page: no header, footer, buttons, glass or colour reliance. */
+@media print {
+  @page {
+    size: A4;
+    margin: 14mm;
+  }
+  html,
+  body {
+    background: #fff !important;
+    color: #000;
+    display: block;
+    font-size: 10.5pt;
+  }
+  body::before,
+  body::after,
+  .site-header,
+  .site-footer,
+  .skip-link,
+  .no-print {
+    display: none !important;
+  }
+  .wrap {
+    max-width: none;
+    padding: 0;
+  }
+  .summary {
+    padding: 0;
+  }
+  .sheet {
+    max-width: none;
+    padding: 0;
+    gap: 14pt;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .sheet__title {
+    font-size: 26pt;
+    margin-top: 6pt;
+  }
+  .sheet__cols {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+  .glance-wrap {
+    overflow: visible;
+  }
+  .glance {
+    min-width: 0;
+    font-size: 9pt;
+  }
+  .glance td,
+  .glance th {
+    padding: 4pt 2pt;
+  }
+  .glance td,
+  .sheet__qr {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .sheet a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .sheet section,
+  .glance tr {
+    break-inside: avoid;
+  }
+}

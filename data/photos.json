@@ -1,0 +1,66 @@
+[
+  {
+    "file": "field-dog",
+    "id": "photo-1674126278178-fe793c5e4d5c",
+    "page": "https://unsplash.com/photos/a-brown-and-white-dog-standing-on-top-of-a-grass-covered-field-4gFuXJCc6Xw",
+    "photographer": "Janusz Walczak",
+    "alt": "A brown and white dog standing on a grass-covered field",
+    "position": "50% 45%"
+  },
+  {
+    "file": "golden-run",
+    "id": "photo-1775806272302-879b04a870cf",
+    "page": "https://unsplash.com/photos/a-golden-retriever-dog-running-in-a-grassy-field-ZWP0VKqgupw",
+    "photographer": "Marian Florinel Condruz",
+    "alt": "A golden retriever running in a grassy field",
+    "position": "50% 50%"
+  },
+  {
+    "file": "forest-path",
+    "id": "photo-1766068622258-a8669e37e269",
+    "page": "https://unsplash.com/photos/a-dog-stands-on-a-path-in-a-bare-forest-0yMUtQ9MH5A",
+    "photographer": "T (tanyabarrow)",
+    "alt": "A dog standing on a path in a bare forest",
+    "position": "50% 55%"
+  },
+  {
+    "file": "beach",
+    "id": "photo-1609075377293-0fc919bd21ee",
+    "page": "https://unsplash.com/photos/golden-retriever-on-beach-shore-during-daytime-GXVpVuXupIg",
+    "photographer": "Elisa Kennemer",
+    "alt": "A golden retriever on a beach shore",
+    "position": "50% 50%"
+  },
+  {
+    "file": "lake",
+    "id": "photo-1673130483685-be58ab8c67f3",
+    "page": "https://unsplash.com/photos/a-dog-swimming-in-a-lake-near-a-forest-Ds8hpu4hCRY",
+    "photographer": "Paulo Pescada",
+    "alt": "A dog swimming in a lake near a forest",
+    "position": "50% 55%"
+  },
+  {
+    "file": "garden",
+    "id": "photo-1769442153249-8040f16a218e",
+    "page": "https://unsplash.com/photos/two-dogs-resting-on-green-grass-in-a-garden-__bNIhTd0G0",
+    "photographer": "Eric Robinson (@wcerob)",
+    "alt": "Two dogs resting on green grass in a garden",
+    "position": "50% 55%"
+  },
+  {
+    "file": "cat-window",
+    "id": "photo-1764708844823-00d2188dafd8",
+    "page": "https://unsplash.com/photos/a-fluffy-cat-sits-near-a-sunlit-window-UxWy8Un2Mjc",
+    "photographer": "Jonathan Ikemura (@ikemura)",
+    "alt": "A fluffy cat sitting near a sunlit window",
+    "position": "50% 50%"
+  },
+  {
+    "file": "vet",
+    "id": "photo-1770836037275-38b44e4b101f",
+    "page": "https://unsplash.com/photos/veterinarian-gives-injection-to-a-small-dog-fQeLC7WlNm8",
+    "photographer": "Alexander Mass (@alexandermassph)",
+    "alt": "A veterinarian giving an injection to a small dog",
+    "position": "50% 45%"
+  }
+]
