@@ -6,7 +6,7 @@ import { PageHero } from "@/components/PageHero";
 
 export const metadata: Metadata = { title: "About" };
 
-const REPO = process.env.NEXT_PUBLIC_REPO_URL;
+const REPO = process.env.NEXT_PUBLIC_REPO_URL ?? "https://github.com/engHADIuk/heedwell";
 
 const DECISIONS = [
   {
