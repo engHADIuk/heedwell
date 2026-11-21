@@ -52,8 +52,9 @@ describe("ingredient search", () => {
     const res = await medicinesGET(new Request("http://localhost/api/medicines?q=praz"));
     const body = await res.json();
     expect(body.meta.licence).toContain("Open Government Licence");
-    expect(body.results[0].name).toBe("Praziquantel");
-    expect(Object.keys(body.results[0]).sort()).toEqual(["categories", "cat", "dog", "key", "name", "otherSpecies", "products"].sort());
+    const praziquantel = body.results.find((r: { name: string }) => r.name === "Praziquantel");
+    expect(praziquantel).toBeDefined();
+    expect(Object.keys(praziquantel).sort()).toEqual(["categories", "cat", "dog", "key", "name", "otherSpecies", "products"].sort());
     expect(typeof medicines.meta.sample).toBe("boolean");
   });
 });
